@@ -1,0 +1,32 @@
+{
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      // For ESLint
+      "source.fixAll.eslint": true,
+      // For TSLint
+      "source.fixAll.tslint": true,
+      // For Stylelint
+      "source.fixAll.stylelint": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "cSpell.words": [
+      "angulartoolkit",
+      "devtools",
+      "module",
+      "store"
+    ],
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "prettier.printWidth": 150,
+    "prettier.useEditorConfig": false,
+    "prettier.tabWidth": 3,
+    "prettier.singleQuote": true
+}

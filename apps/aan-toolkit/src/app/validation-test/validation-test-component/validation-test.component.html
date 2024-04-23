@@ -1,0 +1,60 @@
+<h3>Student validation: </h3>
+<hr />
+
+<h4>On-The-Fly validation</h4>
+<table>
+   <tr>
+      <td>Id</td>
+      <td><input type="text" name="id" [(ngModel)]="student.id" (blur)="onBlur()" [class.red-border]="validator.state.props && !validator.state.props.id.isValid" /></td>
+      <td><span *ngIf="!validator.state.props?.id.isValid"> {{ validator.state.props?.id.errorMessage }} </span></td>
+   </tr>
+   <tr>
+      <td>Name</td>
+      <td><input type="text" name="name" [(ngModel)]="student.name" (blur)="onBlur()" [class.red-border]="validator.state.props && !validator.state.props.name.isValid" /></td>
+      <td><span *ngIf="!validator.state.props?.name.isValid"> {{ validator.state.props?.name.errorMessage }} </span></td>
+   </tr>
+   <tr>
+      <td>Age</td>
+      <td> <input type="text" name="age" [(ngModel)]="student.age" (blur)="onBlur()" [class.red-border]="validator.state.props && !validator.state.props.age.isValid" /></td>
+      <td><span *ngIf="!validator.state.props?.age.isValid"> {{ validator.state.props?.age.errorMessage }} </span></td>
+   </tr>
+</table>
+<br />
+
+<h4>Validate on submit</h4>
+<table>
+   <tr>
+      <td>Id</td>
+      <td><input type="text" name="id" [(ngModel)]="student2.id" [class.red-border]="validator2.state.props && !validator2.state.props.id.isValid" /></td>
+      <td><span *ngIf="!validator2.state.props?.id.isValid"> {{ validator2.state.props?.id.errorMessage }} </span></td>
+   </tr>
+   <tr>
+      <td>Name</td>
+      <td><input type="text" name="name" [(ngModel)]="student2.name" [class.red-border]="validator2.state.props && !validator2.state.props.name.isValid" /></td>
+      <td><span *ngIf="!validator2.state.props?.name.isValid"> {{ validator2.state.props?.name.errorMessage }} </span></td>
+   </tr>
+   <tr>
+      <td>Age</td>
+      <td> <input type="text" name="age" [(ngModel)]="student2.age" [class.red-border]="validator2.state.props && !validator2.state.props.age.isValid" /></td>
+      <td><span *ngIf="!validator2.state.props?.age.isValid"> {{ validator2.state.props?.age.errorMessage }} </span></td>
+   </tr>
+</table>
+<button (click)="onClicked()"> Validate </button>
+<br />
+
+<h4>Pristine (Edit input to enable submit)</h4>
+<table>
+   <tr>
+      <td>Id</td>
+      <td><input type="text" name="id" [(ngModel)]="student3.id" (input)="onChanged()" /></td>
+   </tr>
+   <tr>
+      <td>Name</td>
+      <td><input type="text" name="name" [(ngModel)]="student3.name" (input)="onChanged()" /></td>
+   </tr>
+   <tr>
+      <td>Age</td>
+      <td> <input type="text" name="age" [(ngModel)]="student3.age" (input)="onChanged()" /></td>
+   </tr>
+</table>
+<button [disabled]="validator3.state.pristine"> Validate </button>

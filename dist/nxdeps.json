@@ -1,0 +1,1560 @@
+{
+  "version": "1",
+  "projectGraph": {
+    "nodes": {
+      "aan-toolkit-e2e": {
+        "name": "aan-toolkit-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/aan-toolkit-e2e",
+          "sourceRoot": "apps/aan-toolkit-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/aan-toolkit-e2e/cypress.json",
+                "tsConfig": "apps/aan-toolkit-e2e/tsconfig.e2e.json",
+                "devServerTarget": "aan-toolkit:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "aan-toolkit:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/aan-toolkit-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/aan-toolkit-e2e/**/*"
+                ]
+              }
+            }
+          },
+          "tags": [
+            "scope:aan",
+            "type:toolkit-e2e"
+          ],
+          "files": [
+            {
+              "file": "apps/aan-toolkit-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1592499311246.162
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1592499311266.193
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592499311273.0056
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1592499311281.0383
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1592499311289.0586
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1592499311292.8252
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1592499311296.6416
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1592499311251.4673
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1592499311257.5923
+            },
+            {
+              "file": "apps/aan-toolkit-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1592499311240.599
+            }
+          ]
+        }
+      },
+      "shared-common": {
+        "name": "shared-common",
+        "type": "lib",
+        "data": {
+          "projectType": "library",
+          "root": "libs/shared/common",
+          "sourceRoot": "libs/shared/common/src",
+          "prefix": "askanative-angulartoolkit",
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/shared/common/tsconfig.lib.json",
+                  "libs/shared/common/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/shared/common/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/shared/common/jest.config.js",
+                "tsConfig": "libs/shared/common/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/common/src/test-setup.ts"
+              }
+            }
+          },
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "tags": [
+            "scope:shared",
+            "type:common"
+          ],
+          "files": [
+            {
+              "file": "libs/shared/common/jest.config.js",
+              "ext": ".js",
+              "mtime": 1592500187859.0222
+            },
+            {
+              "file": "libs/shared/common/README.md",
+              "ext": ".md",
+              "mtime": 1592500187837.7986
+            },
+            {
+              "file": "libs/shared/common/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1592502302657.381
+            },
+            {
+              "file": "libs/shared/common/src/lib/extensions/array.extensions.ts",
+              "ext": ".ts",
+              "mtime": 1592500229462.4277
+            },
+            {
+              "file": "libs/shared/common/src/lib/extensions/date.extensions.ts",
+              "ext": ".ts",
+              "mtime": 1592500229491.3635
+            },
+            {
+              "file": "libs/shared/common/src/lib/extensions/number.extensions.ts",
+              "ext": ".ts",
+              "mtime": 1592500229516.2961
+            },
+            {
+              "file": "libs/shared/common/src/lib/extensions/string.extensions.ts",
+              "ext": ".ts",
+              "mtime": 1592500229534.7659
+            },
+            {
+              "file": "libs/shared/common/src/lib/models/error.model.ts",
+              "ext": ".ts",
+              "mtime": 1592501944679.7805
+            },
+            {
+              "file": "libs/shared/common/src/lib/models/index.ts",
+              "ext": ".ts",
+              "mtime": 1592501944696.535
+            },
+            {
+              "file": "libs/shared/common/src/lib/shared-common.module.ts",
+              "ext": ".ts",
+              "mtime": 1592500285874.8787
+            },
+            {
+              "file": "libs/shared/common/src/lib/type-guards/index.ts",
+              "ext": ".ts",
+              "mtime": 1592502286669.3066
+            },
+            {
+              "file": "libs/shared/common/src/lib/type-guards/is-array.guard.ts",
+              "ext": ".ts",
+              "mtime": 1592502269315.8926
+            },
+            {
+              "file": "libs/shared/common/src/lib/type-guards/is-single.guard.ts",
+              "ext": ".ts",
+              "mtime": 1592502267046.2285
+            },
+            {
+              "file": "libs/shared/common/src/lib/utilities/datetime.helper.ts",
+              "ext": ".ts",
+              "mtime": 1592501582040.8247
+            },
+            {
+              "file": "libs/shared/common/src/lib/utilities/deep-copy.ts",
+              "ext": ".ts",
+              "mtime": 1592501364523.6125
+            },
+            {
+              "file": "libs/shared/common/src/lib/utilities/guid.helper.ts",
+              "ext": ".ts",
+              "mtime": 1592501582049.3286
+            },
+            {
+              "file": "libs/shared/common/src/lib/utilities/index.ts",
+              "ext": ".ts",
+              "mtime": 1592501662357.6802
+            },
+            {
+              "file": "libs/shared/common/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1592500187865.9146
+            },
+            {
+              "file": "libs/shared/common/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1592500187855.3762
+            },
+            {
+              "file": "libs/shared/common/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1592500187840.8196
+            },
+            {
+              "file": "libs/shared/common/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1592500187863.9143
+            },
+            {
+              "file": "libs/shared/common/tslint.json",
+              "ext": ".json",
+              "mtime": 1592500187844.6238
+            }
+          ]
+        }
+      },
+      "shared-store": {
+        "name": "shared-store",
+        "type": "lib",
+        "data": {
+          "projectType": "library",
+          "root": "libs/shared/store",
+          "sourceRoot": "libs/shared/store/src",
+          "prefix": "askanative-angulartoolkit",
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/shared/store/tsconfig.lib.json",
+                  "libs/shared/store/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/shared/store/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/shared/store/jest.config.js",
+                "tsConfig": "libs/shared/store/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/store/src/test-setup.ts"
+              }
+            }
+          },
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "tags": [
+            "scope:shared",
+            "type:store"
+          ],
+          "files": [
+            {
+              "file": "libs/shared/store/jest.config.js",
+              "ext": ".js",
+              "mtime": 1592501805277.0654
+            },
+            {
+              "file": "libs/shared/store/README.md",
+              "ext": ".md",
+              "mtime": 1592501805248.3982
+            },
+            {
+              "file": "libs/shared/store/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1592502462617.306
+            },
+            {
+              "file": "libs/shared/store/src/lib/actions/actions.ts",
+              "ext": ".ts",
+              "mtime": 1592502378276.3538
+            },
+            {
+              "file": "libs/shared/store/src/lib/models/action-type.model.ts",
+              "ext": ".ts",
+              "mtime": 1592502132916.486
+            },
+            {
+              "file": "libs/shared/store/src/lib/models/action.model.ts",
+              "ext": ".ts",
+              "mtime": 1592502139789.722
+            },
+            {
+              "file": "libs/shared/store/src/lib/models/state-type.enum.ts",
+              "ext": ".ts",
+              "mtime": 1592502147900.0012
+            },
+            {
+              "file": "libs/shared/store/src/lib/models/state.model.ts",
+              "ext": ".ts",
+              "mtime": 1592502155264.2068
+            },
+            {
+              "file": "libs/shared/store/src/lib/reducers/reducers.ts",
+              "ext": ".ts",
+              "mtime": 1592502435344.8938
+            },
+            {
+              "file": "libs/shared/store/src/lib/shared-store.module.ts",
+              "ext": ".ts",
+              "mtime": 1592501805266.4011
+            },
+            {
+              "file": "libs/shared/store/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1592501805287.4846
+            },
+            {
+              "file": "libs/shared/store/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1592501805272.4
+            },
+            {
+              "file": "libs/shared/store/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1592501805252.396
+            },
+            {
+              "file": "libs/shared/store/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1592501805283.8
+            },
+            {
+              "file": "libs/shared/store/tslint.json",
+              "ext": ".json",
+              "mtime": 1592501805257.154
+            }
+          ]
+        }
+      },
+      "aan-toolkit": {
+        "name": "aan-toolkit",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/aan-toolkit",
+          "sourceRoot": "apps/aan-toolkit/src",
+          "prefix": "askanative-angulartoolkit",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/aan-toolkit",
+                "index": "apps/aan-toolkit/src/index.html",
+                "main": "apps/aan-toolkit/src/main.ts",
+                "polyfills": "apps/aan-toolkit/src/polyfills.ts",
+                "tsConfig": "apps/aan-toolkit/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/aan-toolkit/src/favicon.ico",
+                  "apps/aan-toolkit/src/assets"
+                ],
+                "styles": [
+                  "apps/aan-toolkit/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/aan-toolkit/src/environments/environment.ts",
+                      "with": "apps/aan-toolkit/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "aan-toolkit:build"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "aan-toolkit:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "aan-toolkit:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/aan-toolkit/tsconfig.app.json",
+                  "apps/aan-toolkit/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/aan-toolkit/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/aan-toolkit/jest.config.js",
+                "tsConfig": "apps/aan-toolkit/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/aan-toolkit/src/test-setup.ts"
+              }
+            }
+          },
+          "tags": [
+            "scope:aan",
+            "type:toolkit"
+          ],
+          "files": [
+            {
+              "file": "apps/aan-toolkit/browserslist",
+              "ext": "",
+              "mtime": 1592499311118.4895
+            },
+            {
+              "file": "apps/aan-toolkit/jest.config.js",
+              "ext": ".js",
+              "mtime": 1592499311220.221
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/app-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1592504664657.2903
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1592504935898.875
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1592505134351.3308
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/extensions/array.extensions.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501523915.2166
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/extensions/date.extensions.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501514231.625
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/extensions/number.extensions.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501519245.958
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/extensions/string.extensions.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501523914.485
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/utilities-test/datetime.helper.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501679792.5183
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/common-test/utilities-test/guid.helper.spec.ts",
+              "ext": ".ts",
+              "mtime": 1592501690346.07
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/actions/movie.actions.ts",
+              "ext": ".ts",
+              "mtime": 1592504071414.61
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/effects/movie.effect.ts",
+              "ext": ".ts",
+              "mtime": 1592506050280.9316
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/models/movie.model.ts",
+              "ext": ".ts",
+              "mtime": 1592502552409.2766
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/reducers/movie.reducer.ts",
+              "ext": ".ts",
+              "mtime": 1592506112851.2642
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/selectors/movie.selector.ts",
+              "ext": ".ts",
+              "mtime": 1592506305677.4878
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/state.ts",
+              "ext": ".ts",
+              "mtime": 1592503793404.7153
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.html",
+              "ext": ".html",
+              "mtime": 1592506331294.6477
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.scss",
+              "ext": ".scss",
+              "mtime": 1592502552449.4546
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.ts",
+              "ext": ".ts",
+              "mtime": 1592506321286.2817
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/store-test-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1592505556459.977
+            },
+            {
+              "file": "apps/aan-toolkit/src/app/store-test/store-test.module.ts",
+              "ext": ".ts",
+              "mtime": 1592505564467.7258
+            },
+            {
+              "file": "apps/aan-toolkit/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1592499311165.2722
+            },
+            {
+              "file": "apps/aan-toolkit/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1592499311169.2205
+            },
+            {
+              "file": "apps/aan-toolkit/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1592499311174.8782
+            },
+            {
+              "file": "apps/aan-toolkit/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1592499311113.4849
+            },
+            {
+              "file": "apps/aan-toolkit/src/index.html",
+              "ext": ".html",
+              "mtime": 1592499311137.6487
+            },
+            {
+              "file": "apps/aan-toolkit/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1592499311144.0005
+            },
+            {
+              "file": "apps/aan-toolkit/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1592499311150.4792
+            },
+            {
+              "file": "apps/aan-toolkit/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1592499311158.0337
+            },
+            {
+              "file": "apps/aan-toolkit/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1592499311233.8054
+            },
+            {
+              "file": "apps/aan-toolkit/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1592499311126.9873
+            },
+            {
+              "file": "apps/aan-toolkit/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1592499311107.3042
+            },
+            {
+              "file": "apps/aan-toolkit/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1592499311228.3
+            },
+            {
+              "file": "apps/aan-toolkit/tslint.json",
+              "ext": ".json",
+              "mtime": 1592499311131.79
+            }
+          ]
+        }
+      },
+      "npm:@angular/animations": {
+        "type": "npm",
+        "name": "npm:@angular/animations",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/animations",
+          "files": []
+        }
+      },
+      "npm:@angular/common": {
+        "type": "npm",
+        "name": "npm:@angular/common",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/common",
+          "files": []
+        }
+      },
+      "npm:@angular/compiler": {
+        "type": "npm",
+        "name": "npm:@angular/compiler",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/compiler",
+          "files": []
+        }
+      },
+      "npm:@angular/core": {
+        "type": "npm",
+        "name": "npm:@angular/core",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/core",
+          "files": []
+        }
+      },
+      "npm:@angular/forms": {
+        "type": "npm",
+        "name": "npm:@angular/forms",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/forms",
+          "files": []
+        }
+      },
+      "npm:@angular/platform-browser": {
+        "type": "npm",
+        "name": "npm:@angular/platform-browser",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/platform-browser",
+          "files": []
+        }
+      },
+      "npm:@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "npm:@angular/platform-browser-dynamic",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/platform-browser-dynamic",
+          "files": []
+        }
+      },
+      "npm:@angular/router": {
+        "type": "npm",
+        "name": "npm:@angular/router",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/router",
+          "files": []
+        }
+      },
+      "npm:@ngrx/effects": {
+        "type": "npm",
+        "name": "npm:@ngrx/effects",
+        "data": {
+          "version": "^9.2.0",
+          "packageName": "@ngrx/effects",
+          "files": []
+        }
+      },
+      "npm:@ngrx/store": {
+        "type": "npm",
+        "name": "npm:@ngrx/store",
+        "data": {
+          "version": "^9.2.0",
+          "packageName": "@ngrx/store",
+          "files": []
+        }
+      },
+      "npm:@ngrx/store-devtools": {
+        "type": "npm",
+        "name": "npm:@ngrx/store-devtools",
+        "data": {
+          "version": "^9.2.0",
+          "packageName": "@ngrx/store-devtools",
+          "files": []
+        }
+      },
+      "npm:@nrwl/angular": {
+        "type": "npm",
+        "name": "npm:@nrwl/angular",
+        "data": {
+          "version": "9.4.4",
+          "packageName": "@nrwl/angular",
+          "files": []
+        }
+      },
+      "npm:rxjs": {
+        "type": "npm",
+        "name": "npm:rxjs",
+        "data": {
+          "version": "~6.5.4",
+          "packageName": "rxjs",
+          "files": []
+        }
+      },
+      "npm:validator": {
+        "type": "npm",
+        "name": "npm:validator",
+        "data": {
+          "version": "^13.1.1",
+          "packageName": "validator",
+          "files": []
+        }
+      },
+      "npm:zone.js": {
+        "type": "npm",
+        "name": "npm:zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "packageName": "zone.js",
+          "files": []
+        }
+      },
+      "npm:@angular/cli": {
+        "type": "npm",
+        "name": "npm:@angular/cli",
+        "data": {
+          "version": "9.1.0",
+          "packageName": "@angular/cli",
+          "files": []
+        }
+      },
+      "npm:@nrwl/workspace": {
+        "type": "npm",
+        "name": "npm:@nrwl/workspace",
+        "data": {
+          "version": "9.4.4",
+          "packageName": "@nrwl/workspace",
+          "files": []
+        }
+      },
+      "npm:@types/node": {
+        "type": "npm",
+        "name": "npm:@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "packageName": "@types/node",
+          "files": []
+        }
+      },
+      "npm:dotenv": {
+        "type": "npm",
+        "name": "npm:dotenv",
+        "data": {
+          "version": "6.2.0",
+          "packageName": "dotenv",
+          "files": []
+        }
+      },
+      "npm:ts-node": {
+        "type": "npm",
+        "name": "npm:ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "packageName": "ts-node",
+          "files": []
+        }
+      },
+      "npm:tslint": {
+        "type": "npm",
+        "name": "npm:tslint",
+        "data": {
+          "version": "~6.0.0",
+          "packageName": "tslint",
+          "files": []
+        }
+      },
+      "npm:eslint": {
+        "type": "npm",
+        "name": "npm:eslint",
+        "data": {
+          "version": "6.8.0",
+          "packageName": "eslint",
+          "files": []
+        }
+      },
+      "npm:typescript": {
+        "type": "npm",
+        "name": "npm:typescript",
+        "data": {
+          "version": "~3.8.3",
+          "packageName": "typescript",
+          "files": []
+        }
+      },
+      "npm:prettier": {
+        "type": "npm",
+        "name": "npm:prettier",
+        "data": {
+          "version": "2.0.4",
+          "packageName": "prettier",
+          "files": []
+        }
+      },
+      "npm:@angular/compiler-cli": {
+        "type": "npm",
+        "name": "npm:@angular/compiler-cli",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/compiler-cli",
+          "files": []
+        }
+      },
+      "npm:@angular/language-service": {
+        "type": "npm",
+        "name": "npm:@angular/language-service",
+        "data": {
+          "version": "^9.1.0",
+          "packageName": "@angular/language-service",
+          "files": []
+        }
+      },
+      "npm:@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "npm:@angular-devkit/build-angular",
+        "data": {
+          "version": "0.901.0",
+          "packageName": "@angular-devkit/build-angular",
+          "files": []
+        }
+      },
+      "npm:codelyzer": {
+        "type": "npm",
+        "name": "npm:codelyzer",
+        "data": {
+          "version": "~5.0.1",
+          "packageName": "codelyzer",
+          "files": []
+        }
+      },
+      "npm:jest-preset-angular": {
+        "type": "npm",
+        "name": "npm:jest-preset-angular",
+        "data": {
+          "version": "8.1.2",
+          "packageName": "jest-preset-angular",
+          "files": []
+        }
+      },
+      "npm:@nrwl/jest": {
+        "type": "npm",
+        "name": "npm:@nrwl/jest",
+        "data": {
+          "version": "9.4.4",
+          "packageName": "@nrwl/jest",
+          "files": []
+        }
+      },
+      "npm:jest": {
+        "type": "npm",
+        "name": "npm:jest",
+        "data": {
+          "version": "25.2.3",
+          "packageName": "jest",
+          "files": []
+        }
+      },
+      "npm:@types/jest": {
+        "type": "npm",
+        "name": "npm:@types/jest",
+        "data": {
+          "version": "25.1.4",
+          "packageName": "@types/jest",
+          "files": []
+        }
+      },
+      "npm:ts-jest": {
+        "type": "npm",
+        "name": "npm:ts-jest",
+        "data": {
+          "version": "25.2.1",
+          "packageName": "ts-jest",
+          "files": []
+        }
+      },
+      "npm:cypress": {
+        "type": "npm",
+        "name": "npm:cypress",
+        "data": {
+          "version": "^4.1.0",
+          "packageName": "cypress",
+          "files": []
+        }
+      },
+      "npm:@nrwl/cypress": {
+        "type": "npm",
+        "name": "npm:@nrwl/cypress",
+        "data": {
+          "version": "9.4.4",
+          "packageName": "@nrwl/cypress",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "aan-toolkit-e2e": [
+        {
+          "type": "implicit",
+          "source": "aan-toolkit-e2e",
+          "target": "aan-toolkit"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit-e2e",
+          "target": "npm:@nrwl/cypress"
+        }
+      ],
+      "shared-common": [
+        {
+          "type": "static",
+          "source": "shared-common",
+          "target": "npm:validator"
+        },
+        {
+          "type": "static",
+          "source": "shared-common",
+          "target": "npm:@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "shared-common",
+          "target": "npm:@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "shared-common",
+          "target": "npm:jest-preset-angular"
+        }
+      ],
+      "shared-store": [
+        {
+          "type": "static",
+          "source": "shared-store",
+          "target": "shared-common"
+        },
+        {
+          "type": "static",
+          "source": "shared-store",
+          "target": "npm:@ngrx/store"
+        },
+        {
+          "type": "static",
+          "source": "shared-store",
+          "target": "npm:@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "shared-store",
+          "target": "npm:@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "shared-store",
+          "target": "npm:jest-preset-angular"
+        }
+      ],
+      "aan-toolkit": [
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "shared-common"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "shared-store"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@angular/router"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@ngrx/effects"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:rxjs"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@ngrx/store"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@ngrx/store-devtools"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:zone.js"
+        },
+        {
+          "type": "static",
+          "source": "aan-toolkit",
+          "target": "npm:jest-preset-angular"
+        }
+      ],
+      "npm:@angular/animations": [],
+      "npm:@angular/common": [],
+      "npm:@angular/compiler": [],
+      "npm:@angular/core": [],
+      "npm:@angular/forms": [],
+      "npm:@angular/platform-browser": [],
+      "npm:@angular/platform-browser-dynamic": [],
+      "npm:@angular/router": [],
+      "npm:@ngrx/effects": [],
+      "npm:@ngrx/store": [],
+      "npm:@ngrx/store-devtools": [],
+      "npm:@nrwl/angular": [],
+      "npm:rxjs": [],
+      "npm:validator": [],
+      "npm:zone.js": [],
+      "npm:@angular/cli": [],
+      "npm:@nrwl/workspace": [],
+      "npm:@types/node": [],
+      "npm:dotenv": [],
+      "npm:ts-node": [],
+      "npm:tslint": [],
+      "npm:eslint": [],
+      "npm:typescript": [],
+      "npm:prettier": [],
+      "npm:@angular/compiler-cli": [],
+      "npm:@angular/language-service": [],
+      "npm:@angular-devkit/build-angular": [],
+      "npm:codelyzer": [],
+      "npm:jest-preset-angular": [],
+      "npm:@nrwl/jest": [],
+      "npm:jest": [],
+      "npm:@types/jest": [],
+      "npm:ts-jest": [],
+      "npm:cypress": [],
+      "npm:@nrwl/cypress": []
+    }
+  },
+  "fileMap": {
+    "aan-toolkit-e2e": [
+      {
+        "file": "apps/aan-toolkit-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1592499311246.162
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1592499311266.193
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592499311273.0056
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1592499311281.0383
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1592499311289.0586
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1592499311292.8252
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1592499311296.6416
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1592499311251.4673
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1592499311257.5923
+      },
+      {
+        "file": "apps/aan-toolkit-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1592499311240.599
+      }
+    ],
+    "shared-common": [
+      {
+        "file": "libs/shared/common/jest.config.js",
+        "ext": ".js",
+        "mtime": 1592500187859.0222
+      },
+      {
+        "file": "libs/shared/common/README.md",
+        "ext": ".md",
+        "mtime": 1592500187837.7986
+      },
+      {
+        "file": "libs/shared/common/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1592502302657.381
+      },
+      {
+        "file": "libs/shared/common/src/lib/extensions/array.extensions.ts",
+        "ext": ".ts",
+        "mtime": 1592500229462.4277
+      },
+      {
+        "file": "libs/shared/common/src/lib/extensions/date.extensions.ts",
+        "ext": ".ts",
+        "mtime": 1592500229491.3635
+      },
+      {
+        "file": "libs/shared/common/src/lib/extensions/number.extensions.ts",
+        "ext": ".ts",
+        "mtime": 1592500229516.2961
+      },
+      {
+        "file": "libs/shared/common/src/lib/extensions/string.extensions.ts",
+        "ext": ".ts",
+        "mtime": 1592500229534.7659
+      },
+      {
+        "file": "libs/shared/common/src/lib/models/error.model.ts",
+        "ext": ".ts",
+        "mtime": 1592501944679.7805
+      },
+      {
+        "file": "libs/shared/common/src/lib/models/index.ts",
+        "ext": ".ts",
+        "mtime": 1592501944696.535
+      },
+      {
+        "file": "libs/shared/common/src/lib/shared-common.module.ts",
+        "ext": ".ts",
+        "mtime": 1592500285874.8787
+      },
+      {
+        "file": "libs/shared/common/src/lib/type-guards/index.ts",
+        "ext": ".ts",
+        "mtime": 1592502286669.3066
+      },
+      {
+        "file": "libs/shared/common/src/lib/type-guards/is-array.guard.ts",
+        "ext": ".ts",
+        "mtime": 1592502269315.8926
+      },
+      {
+        "file": "libs/shared/common/src/lib/type-guards/is-single.guard.ts",
+        "ext": ".ts",
+        "mtime": 1592502267046.2285
+      },
+      {
+        "file": "libs/shared/common/src/lib/utilities/datetime.helper.ts",
+        "ext": ".ts",
+        "mtime": 1592501582040.8247
+      },
+      {
+        "file": "libs/shared/common/src/lib/utilities/deep-copy.ts",
+        "ext": ".ts",
+        "mtime": 1592501364523.6125
+      },
+      {
+        "file": "libs/shared/common/src/lib/utilities/guid.helper.ts",
+        "ext": ".ts",
+        "mtime": 1592501582049.3286
+      },
+      {
+        "file": "libs/shared/common/src/lib/utilities/index.ts",
+        "ext": ".ts",
+        "mtime": 1592501662357.6802
+      },
+      {
+        "file": "libs/shared/common/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1592500187865.9146
+      },
+      {
+        "file": "libs/shared/common/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1592500187855.3762
+      },
+      {
+        "file": "libs/shared/common/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1592500187840.8196
+      },
+      {
+        "file": "libs/shared/common/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1592500187863.9143
+      },
+      {
+        "file": "libs/shared/common/tslint.json",
+        "ext": ".json",
+        "mtime": 1592500187844.6238
+      }
+    ],
+    "shared-store": [
+      {
+        "file": "libs/shared/store/jest.config.js",
+        "ext": ".js",
+        "mtime": 1592501805277.0654
+      },
+      {
+        "file": "libs/shared/store/README.md",
+        "ext": ".md",
+        "mtime": 1592501805248.3982
+      },
+      {
+        "file": "libs/shared/store/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1592502462617.306
+      },
+      {
+        "file": "libs/shared/store/src/lib/actions/actions.ts",
+        "ext": ".ts",
+        "mtime": 1592502378276.3538
+      },
+      {
+        "file": "libs/shared/store/src/lib/models/action-type.model.ts",
+        "ext": ".ts",
+        "mtime": 1592502132916.486
+      },
+      {
+        "file": "libs/shared/store/src/lib/models/action.model.ts",
+        "ext": ".ts",
+        "mtime": 1592502139789.722
+      },
+      {
+        "file": "libs/shared/store/src/lib/models/state-type.enum.ts",
+        "ext": ".ts",
+        "mtime": 1592502147900.0012
+      },
+      {
+        "file": "libs/shared/store/src/lib/models/state.model.ts",
+        "ext": ".ts",
+        "mtime": 1592502155264.2068
+      },
+      {
+        "file": "libs/shared/store/src/lib/reducers/reducers.ts",
+        "ext": ".ts",
+        "mtime": 1592502435344.8938
+      },
+      {
+        "file": "libs/shared/store/src/lib/shared-store.module.ts",
+        "ext": ".ts",
+        "mtime": 1592501805266.4011
+      },
+      {
+        "file": "libs/shared/store/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1592501805287.4846
+      },
+      {
+        "file": "libs/shared/store/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1592501805272.4
+      },
+      {
+        "file": "libs/shared/store/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1592501805252.396
+      },
+      {
+        "file": "libs/shared/store/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1592501805283.8
+      },
+      {
+        "file": "libs/shared/store/tslint.json",
+        "ext": ".json",
+        "mtime": 1592501805257.154
+      }
+    ],
+    "aan-toolkit": [
+      {
+        "file": "apps/aan-toolkit/browserslist",
+        "ext": "",
+        "mtime": 1592499311118.4895
+      },
+      {
+        "file": "apps/aan-toolkit/jest.config.js",
+        "ext": ".js",
+        "mtime": 1592499311220.221
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/app-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1592504664657.2903
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1592504935898.875
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1592505134351.3308
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/extensions/array.extensions.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501523915.2166
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/extensions/date.extensions.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501514231.625
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/extensions/number.extensions.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501519245.958
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/extensions/string.extensions.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501523914.485
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/utilities-test/datetime.helper.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501679792.5183
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/common-test/utilities-test/guid.helper.spec.ts",
+        "ext": ".ts",
+        "mtime": 1592501690346.07
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/actions/movie.actions.ts",
+        "ext": ".ts",
+        "mtime": 1592504071414.61
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/effects/movie.effect.ts",
+        "ext": ".ts",
+        "mtime": 1592506050280.9316
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/models/movie.model.ts",
+        "ext": ".ts",
+        "mtime": 1592502552409.2766
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/reducers/movie.reducer.ts",
+        "ext": ".ts",
+        "mtime": 1592506112851.2642
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/selectors/movie.selector.ts",
+        "ext": ".ts",
+        "mtime": 1592506305677.4878
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/state.ts",
+        "ext": ".ts",
+        "mtime": 1592503793404.7153
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.html",
+        "ext": ".html",
+        "mtime": 1592506331294.6477
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.scss",
+        "ext": ".scss",
+        "mtime": 1592502552449.4546
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/store-test-component/store-test.component.ts",
+        "ext": ".ts",
+        "mtime": 1592506321286.2817
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/store-test-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1592505556459.977
+      },
+      {
+        "file": "apps/aan-toolkit/src/app/store-test/store-test.module.ts",
+        "ext": ".ts",
+        "mtime": 1592505564467.7258
+      },
+      {
+        "file": "apps/aan-toolkit/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1592499311165.2722
+      },
+      {
+        "file": "apps/aan-toolkit/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1592499311169.2205
+      },
+      {
+        "file": "apps/aan-toolkit/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1592499311174.8782
+      },
+      {
+        "file": "apps/aan-toolkit/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1592499311113.4849
+      },
+      {
+        "file": "apps/aan-toolkit/src/index.html",
+        "ext": ".html",
+        "mtime": 1592499311137.6487
+      },
+      {
+        "file": "apps/aan-toolkit/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1592499311144.0005
+      },
+      {
+        "file": "apps/aan-toolkit/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1592499311150.4792
+      },
+      {
+        "file": "apps/aan-toolkit/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1592499311158.0337
+      },
+      {
+        "file": "apps/aan-toolkit/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1592499311233.8054
+      },
+      {
+        "file": "apps/aan-toolkit/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1592499311126.9873
+      },
+      {
+        "file": "apps/aan-toolkit/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1592499311107.3042
+      },
+      {
+        "file": "apps/aan-toolkit/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1592499311228.3
+      },
+      {
+        "file": "apps/aan-toolkit/tslint.json",
+        "ext": ".json",
+        "mtime": 1592499311131.79
+      }
+    ]
+  }
+}

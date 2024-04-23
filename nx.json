@@ -1,0 +1,39 @@
+{
+  "npmScope": "askanative-angulartoolkit",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "aan-toolkit": {
+      "tags": ["scope:aan", "type:toolkit"]
+    },
+    "aan-toolkit-e2e": {
+      "tags": ["scope:aan", "type:toolkit-e2e"],
+      "implicitDependencies": ["aan-toolkit"]
+    },
+    "shared-common": {
+      "tags": ["scope:shared", "type:common"]
+    },
+    "shared-store": {
+      "tags": ["scope:shared", "type:store"]
+    },
+    "shared-validation": {
+      "tags": ["scope:shared", "type:validation"]
+    }
+  }
+}

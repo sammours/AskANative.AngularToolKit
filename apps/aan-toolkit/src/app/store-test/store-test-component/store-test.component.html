@@ -1,0 +1,20 @@
+<h3>All Movies: </h3>
+<hr />
+<ng-container *ngIf="movies$ | async as movies">
+   <ng-container *ngFor="let movie of movies">
+      <div>Movie id: {{ movie.id }}</div>
+      <div>Movie name: {{ movie.name }}</div>
+   </ng-container>
+</ng-container>
+
+<h3>Get Movie with id: 1</h3>
+<hr />
+<button (click)="getById()">Get By Id</button>
+<br />
+<ng-container *ngIf="isClicked">
+   <ng-container *ngIf="movie$ | async as movie">
+      Movie id: {{ movie.id }}
+      <br />
+      Movie name: {{ movie.name }}
+   </ng-container>
+</ng-container>

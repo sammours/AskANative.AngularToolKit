@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "projects": {
+    "aan-toolkit": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/aan-toolkit",
+      "sourceRoot": "apps/aan-toolkit/src",
+      "prefix": "askanative-angulartoolkit",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/aan-toolkit",
+            "index": "apps/aan-toolkit/src/index.html",
+            "main": "apps/aan-toolkit/src/main.ts",
+            "polyfills": "apps/aan-toolkit/src/polyfills.ts",
+            "tsConfig": "apps/aan-toolkit/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/aan-toolkit/src/favicon.ico",
+              "apps/aan-toolkit/src/assets"
+            ],
+            "styles": ["apps/aan-toolkit/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/aan-toolkit/src/environments/environment.ts",
+                  "with": "apps/aan-toolkit/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "aan-toolkit:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "aan-toolkit:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "aan-toolkit:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/aan-toolkit/tsconfig.app.json",
+              "apps/aan-toolkit/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/aan-toolkit/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/aan-toolkit/jest.config.js",
+            "tsConfig": "apps/aan-toolkit/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/aan-toolkit/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "aan-toolkit-e2e": {
+      "root": "apps/aan-toolkit-e2e",
+      "sourceRoot": "apps/aan-toolkit-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/aan-toolkit-e2e/cypress.json",
+            "tsConfig": "apps/aan-toolkit-e2e/tsconfig.e2e.json",
+            "devServerTarget": "aan-toolkit:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "aan-toolkit:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/aan-toolkit-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/aan-toolkit-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "shared-common": {
+      "projectType": "library",
+      "root": "libs/shared/common",
+      "sourceRoot": "libs/shared/common/src",
+      "prefix": "askanative-angulartoolkit",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/common/tsconfig.lib.json",
+              "libs/shared/common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/common/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/common/jest.config.js",
+            "tsConfig": "libs/shared/common/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/common/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-store": {
+      "projectType": "library",
+      "root": "libs/shared/store",
+      "sourceRoot": "libs/shared/store/src",
+      "prefix": "askanative-angulartoolkit",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/store/tsconfig.lib.json",
+              "libs/shared/store/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/store/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/store/jest.config.js",
+            "tsConfig": "libs/shared/store/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/store/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-validation": {
+      "projectType": "library",
+      "root": "libs/shared/validation",
+      "sourceRoot": "libs/shared/validation/src",
+      "prefix": "askanative-angulartoolkit",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/validation/tsconfig.lib.json",
+              "libs/shared/validation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/validation/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/validation/jest.config.js",
+            "tsConfig": "libs/shared/validation/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/validation/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "validation": {
+      "projectType": "library",
+      "root": "libs/validation",
+      "sourceRoot": "libs/validation/src",
+      "prefix": "askanative-angulartoolkit",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/validation/tsconfig.lib.json",
+              "libs/validation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/validation/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/validation/jest.config.js",
+            "tsConfig": "libs/validation/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/validation/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "aan-toolkit"
+}

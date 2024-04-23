@@ -1,0 +1,20 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "askanativeAngulartoolkit",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "askanative-angulartoolkit",
+      "kebab-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": ["!**/*"]
+  }
+}
